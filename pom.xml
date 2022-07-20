@@ -124,16 +124,4 @@
 		</profile>
 	</profiles>
 	
-	 <distributionManagement>
-         <repository>
-            <id>dev</id>
-            <name>dev</name>
-            <url>https://maven.pkg.github.com/ajeetkrd/elevator</url>
-        </repository>
-	<snapshotRepository>
-            <id>elevator-snapshot</id>
-            <name>elevator-snapshot</name>
-            <url>https://github.com/ajeetkrd/mavenRepo</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
