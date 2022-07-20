@@ -40,7 +40,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2      
 
     - name: Build and test project with Maven
-      run: mvn -B package -Pdev --file pom.xml
+      run: mvn -B package --file pom.xml
 
     
   publish-job:
@@ -51,7 +51,7 @@ jobs:
         - uses: actions/setup-java@v1
           with:
             java-version: 14
-        - run: mvn -B package -Pdev --file pom.xml -DskipTests
+        - run: mvn -B package --file pom.xml -DskipTests
         - run: mkdir staging && cp target/*.jar staging
         - uses: actions/upload-artifact@v3
           with:
