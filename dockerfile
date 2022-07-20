@@ -3,8 +3,8 @@ RUN mkdir -p /workspace
 WORKDIR /workspace
 COPY pom.xml /workspace
 COPY src /workspace/src
-RUN mvn -B package -Pdev --file pom.xml -DskipTests
+RUN mvn -B package --file pom.xml -DskipTests
 
 FROM openjdk:14-slim
-COPY --from=build /workspace/target/*.jar app/
-ENTRYPOINT ["java","-jar","app/app.jar"]
+COPY --from=build /workspace/target/elevator-v1.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
